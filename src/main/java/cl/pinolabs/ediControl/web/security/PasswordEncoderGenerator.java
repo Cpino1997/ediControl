@@ -1,4 +1,4 @@
-package cl.pinolabs.kevinstore.web.security;
+package cl.pinolabs.ediControl.web.security;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -6,6 +6,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class PasswordEncoderGenerator {
     public static void main(String[] args) {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        System.out.println(passwordEncoder.encode("2125"));
+        System.out.println(passwordEncoder.encode("pinolabs"));
     }
 }
