@@ -1,5 +1,6 @@
 package cl.pinolabs.ediControl.web.restController;
 
+/* Creado por PinoLabs */
 
 import cl.pinolabs.ediControl.model.domain.dto.AFPDTO;
 import cl.pinolabs.ediControl.model.domain.service.AFPService;
@@ -8,9 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 @RestController
-@RequestMapping("/api/afp")
+@RequestMapping("/api/afps")
 public class AFPRestController {
 private final AFPService service;
 
@@ -18,7 +18,7 @@ public AFPRestController(AFPService service) {
     this.service = service;
 }
 
-@GetMapping("/all")
+@GetMapping
 public ResponseEntity<List<AFPDTO>> findAll(){
     return service.findAll()
             .map(afps -> new ResponseEntity<>(afps, HttpStatus.OK))

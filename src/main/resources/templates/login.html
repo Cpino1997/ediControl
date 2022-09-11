@@ -1,0 +1,54 @@
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Login</title>
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/css/style.css}" rel="stylesheet">
+  <script th:src="@{/js/bootstrap.min.js}"></script>
+  <script th:src="@{/js/login.js}"></script>
+  <style>[_nghost-fqr-c23]{font-family:Open Sans,sans-serif;color:#121212}</style></head>
+<body>
+<div class="container">
+  <br>
+  <form class="form-login" method="post" action="/login" id="loginn">
+    <div class="centro">
+      <img class="mb-2 form-signin-heading centro aa"  th:src="@{/img/logo.png}">
+      <h2 class="form-signin-heading centro">Ingreso</h2>
+    </div>
+    <p>
+      <label for="username" class="sr-only">Usuario</label>
+      <input type="text" id="username" name="username" class="form-control" placeholder="Usuario" required="" autofocus="">
+    </p>
+    <p>
+      <label for="password" class="sr-only">Contraseña</label>
+      <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required="">
+    </p>
+    <div class="centro">
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+      <p>No Tienes Cuenta? Solícita una <a style="color:blue;" href="#regg" onclick="showReg()">Aquí!</a></p>
+    </div>
+  </form>
+
+  <form class="form-login" method="post" action="/login/registro" id="regg">
+    <div class="centro">
+      <img class="mb-2 form-signin-heading centro aa"  th:src="@{/img/logo.png}">
+      <h2 class="form-signin-heading centro">Registro</h2>
+    </div>
+    <p>
+      <label for="username" class="sr-only">Usuario</label>
+      <input type="text" id="usernameTemp" name="usernameTemp" class="form-control" placeholder="Usuario" required="" autofocus="">
+    </p>
+    <p>
+      <label for="password" class="sr-only">Contraseña</label>
+      <input type="password" id="passwordTemp" name="passwordTemp" class="form-control" placeholder="Contraseña" required="">
+    </p>
+    <div class="centro">
+      <a class="btn btn-lg btn-primary btn-block" onclick="alerta()" type="submit">Ingresar</a>
+      <p>Ya Tienes Cuenta? Ingresa <a style="color:blue;" href="#loginn" onclick="showLog()">Aquí!</a></p>
+    </div>
+  </form>
+</div>
+</body>
+</html>

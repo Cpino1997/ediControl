@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>ADMINISTRADOR AFP</title>
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/css/style.css}" rel="stylesheet">
+  <script th:src="@{/js/jquery-3.6.0.min.js}"></script>
+  <script th:src="@{/js/bootstrap.min.js}"></script>
+  <script src="https://kit.fontawesome.com/b6cd2b590e.js" crossorigin="anonymous"></script>
+  <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+</head>
+<body>
+<header>
+  <h1><center>Bienvenido Desarrollador</center></h1>
+</header>
+<main>
+  <h3 class="span loader centro">
+    <span class="m">L</span>
+    <span class="m">I</span>
+    <span class="m">S</span>
+    <span class="m">T</span>
+    <span class="m">A</span>
+    <span class="m">D</span>
+    <span class="m">O</span>
+    <span class="m">&nbsp;</span>
+    <span class="m">D</span>
+    <span class="m">E</span>
+    <span class="m">&nbsp;</span>
+    <span class="m">T</span>
+    <span class="m">R</span>
+    <span class="m">A</span>
+    <span class="m">B</span>
+    <span class="m">A</span>
+    <span class="m">J</span>
+    <span class="m">A</span>
+    <span class="m">D</span>
+    <span class="m">O</span>
+    <span class="m">R</span>
+    <span class="m">E</span>
+    <span class="m">S</span>
+  </h3>
+  <!-- SPAN lETRAS-->
+
+  <!-- Contenedor -->
+  <div class="mask d-flex align-items-center h-100">
+    <div class="container">
+      <div class="row justify-content-center">
+        <br>
+        <!-- TABLA -->
+        <section class="container w80">
+          <br>
+          <table class="table table-stripe" >
+            <table class="table table-hover" id="trabajadors">
+              <thead>
+              <tr class="centro">
+                <th>Rut</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>Cargas</th>
+                <th>AFP</th>
+                <th>Salud</th>
+                <th>Caja</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr  class="centro" th:each="trabajador: ${trabajadores}">
+                <td><a th:text="${trabajador.getRut()}"></a></td>
+                <th th:text="${trabajador.getNombre()}"></th>
+                <th th:text="${trabajador.getApellido()}"></th>
+                <td><a th:text="${trabajador.getCorreo()}"></a></td>
+                <th th:text="${trabajador.getDireccion()}"></th>
+                <td><a th:text="${trabajador.getTelefono()}"></a></td>
+                <th th:text="${trabajador.getCargas()}"></th>
+                <td><a th:text="${trabajador.afpdto.nombre}"></a></td>
+                <td><a th:text="${trabajador.saludDTO.nombre}"></a></td>
+                <td><a th:text="${trabajador.cajaDTO.nombre}"></a></td>
+              </tr>
+              </tbody>
+            </table>
+          </table>
+          <!-- TABLA CLIENTES-->
+
+
+          <br>
+          <!-- BOTONES -->
+          <div class="row">
+            <div class="col">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#crearTrabajador">Crear Trabajador</button>
+            </div>
+            <div class="col-auto">
+              <a th:href="@{/devs}" class="btn btn-primary">volver</a>
+            </div>
+          </div>
+          <!-- BOTONES -->
+        </section>
+
+        <!-- TABLA -->
+      </div>
+    </div>
+  </div>
+  <!-- Contenedor -->
+
+  <!-- Modal Crear Producto-->
+  <div class="modal fade" id="crearTrabajador" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form th:action="@{/devs/trabajador/save}" method="post" th:object="${trabajador}">
+            <h3 class="span loader centro">
+              <span class="m">A</span>
+              <span class="m">G</span>
+              <span class="m">R</span>
+              <span class="m">E</span>
+              <span class="m">G</span>
+              <span class="m">A</span>
+              <span class="m">R</span>
+              <span class="m">&nbsp;</span>
+              <span class="m">T</span>
+              <span class="m">R</span>
+              <span class="m">A</span>
+              <span class="m">B</span>
+              <span class="m">A</span>
+              <span class="m">J</span>
+              <span class="m">A</span>
+              <span class="m">D</span>
+              <span class="m">O</span>
+              <span class="m">R</span>
+            </h3>
+            <div class="mb-3">
+              <input type="hidden" class="form-control" id="idTrabajador" name="idTrabajador">
+            </div>
+            <div class="mb-3">
+              <label for="rut" class="form-label">Rut</label>
+              <input type="text" class="form-control" id="rut" name="rut" placeholder="7%">
+            </div>
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Jabon">
+            </div>
+            <div class="mb-3">
+              <label for="apellido" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Pino">
+            </div>
+            <div class="mb-3">
+              <label for="correo" class="form-label">Correo</label>
+              <input type="email" class="form-control" id="correo" name="correo" placeholder="Pino@pinolabs.cl">
+            </div>
+            <div class="mb-3">
+              <label for="direccion" class="form-label">Correo</label>
+              <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Santa rosa #325">
+            </div>
+            <div class="mb-3">
+              <label for="telefono" class="form-label">Telefono</label>
+              <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="956603146">
+            </div>
+            <div class="mb-3">
+              <label for="cargas" class="form-label">Cargas Familiares: </label>
+              <input type="text" class="form-control" id="cargas" name="cargas" placeholder="1">
+            </div>
+
+            <div class="col md-3">
+              <label for="idAfp" class="form-label">AFP:</label>
+              <select class="form-select" id="idAfp" name="idAfp">
+                <option value="0">Elije una AFP</option>
+                <option th:each="afp: ${afps}" th:value="${afp.idAfp}" th:text="${afp.nombre}"></option>
+              </select>
+            </div>
+            <div class="col md-3">
+              <label for="idSalud" class="form-label">Salud:</label>
+              <select class="form-select" id="idSalud" name="idSalud">
+                <option value="0">Elije un sistema de salud</option>
+                <option th:each="salud: ${saluds}" th:value="${salud.idSalud}" th:text="${salud.nombre}"></option>
+              </select>
+            </div>
+            <div class="col md-3">
+              <label for="idCaja" class="form-label">Caja Compensación </label>
+              <select class="form-select" id="idCaja" name="idCaja">
+                <option value="0">Elije una Caja</option>
+                <option th:each="caja: ${cajas}" th:value="${caja.idCaja}" th:text="${caja.nombre}"></option>
+              </select>
+            </div>
+
+
+
+            <div class="row top1">
+              <div class="col-md centro">
+                <small>Falta por terminar</small>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="reset" class="btn btn-secondary">Limpiar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Crear Producto-->
+</main>
+<!-- Scrípts -->
+<script th:inline="javascript">
+$(document).ready( function () {
+$('#trabajadors').DataTable();
+} );
+</script></main>
+</body>
+</html>

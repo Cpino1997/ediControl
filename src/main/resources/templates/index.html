@@ -3,9 +3,9 @@
 <head id="head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="web pinolabs">
+    <meta name="description" content="web oficial de ediControl">
     <meta name="author" content="PinoLabs">
-    <title>KevinStore.cl</title>
+    <title>ediControl.cl</title>
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
     <link th:href="@{/css/style.css}" rel="stylesheet">
     <script th:src="@{/js/jquery-3.6.0.min.js}"></script>
@@ -13,89 +13,190 @@
     <script src="https://kit.fontawesome.com/b6cd2b590e.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-<div class="container py-3">
+<div class="container-fluid py-3">
     <header>
-        <!-- titulo -->
         <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
-            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-                <span class="fs-4">AdminControl</span>
+            <a th:href="@{/}" class="d-flex align-items-center text-dark text-decoration-none">
+                <span class="fs-4">ediControl</span>
             </a>
             <!-- menu -->
             <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-                <a class="me-3 py-2 text-dark text-decoration-none" href="#">Inicio</a>
-                <a class="me-3 py-2 text-dark text-decoration-none" href="#">Servicios</a>
-                <a class="me-3 py-2 text-dark text-decoration-none" href="#">Sobre Nosotros</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" th:href="@{/}">Inicio</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" href="#servicios">Servicios</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" href="#sobre-nosotros">Sobre Nosotros</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" th:href="@{/login}">Devs</a>
             </nav>
             <!-- menu -->
         </div>
-        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-            <h1 class="display-4 fw-normal">Servicio</h1>
-            <p class="fs-5 text-muted">Servicios creados por profesionales para todo tipo de requerimiento de nuestros clientes!</p>
-        </div>
-        <!-- titulo -->
     </header>
-
     <main>
-        <!-- tarjetas -->
-        <div class="card-deck">
-        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-            <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Administrador <br> de Trabajadores</h4>
+        <section class="container" id="Inicio">
+            <div class="px-4 py-5 my-5 text-center">
+                <img class="d-block mx-auto mb-4" th:src="@{/img/logo.png}" alt="" width="180" height="180">
+                <h1 class="display-5 fw-bold">EdiControl</h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead mb-4">EdiControl es una plataforma de gestión inmobiliaria que nace de la necesidad de un lugar seguro, rápido y eficaz para guardar y manipular datos los datos sensibles que nuestros clientes requieren.
+                        Nuestro compromiso es dar lo mejor para entregar una plataforma lo más estable posible, dándolo todo hasta en el último detalle, nuestras aplicaciones se encuentran desarrolladas con los últimos estándares tecnológicos del mercado actual.
+                    </p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <a  th:href="@{/login}" class="btn btn-primary btn-lg px-4 gap-3">Ingresar</a>
                     </div>
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title">$25.000</h1>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>Creacion y Administracion de Trabajadores</li>
-                            <li>Creacion y Administracion de Liquidaciones</li>
-                            <li>Creacion y Administracion de Contratos</li>
-                            <li>Centro de Ayuda Completo Remoto</li>
-                        </ul>
-                        <button type="button" class="w-100 btn btn-lg btn-outline-primary">Empezar</button>
+                </div>
+                <br>
+                <small class="centro fa-solid fa-bounce">Desliza para saber más</small>
+            </div>
+        </section>
+        <!-- tarjetas -->
+        <br>
+        <section id="servicios">
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                <h1 class="display-4 fw-normal">Servicios</h1>
+                <p class="fs-5 text-muted">Servicios creados por profesionales para todo tipo de requerimiento de nuestros clientes!</p>
+            </div>
+            <br>
+            <br>
+            <div class="card-deck">
+                <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                    <div class="col">
+                        <div class="card mb-4 rounded-3 shadow-sm">
+                            <div class="card-header py-3">
+                                <h4 class="my-0 fw-normal">Administrador <br> de Trabajadores</h4>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title">$25.000</h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Creacion y Administracion de Trabajadores</li>
+                                    <li>Creacion y Administracion de Liquidaciones</li>
+                                    <li>Creacion y Administracion de Contratos</li>
+                                    <li>Centro de Ayuda Completo Remoto</li>
+                                </ul>
+                                <a type="button" class="w-100 btn btn-lg btn-outline-primary" th:href="@{/login}">Empezar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card mb-4 rounded-3 shadow-sm">
+                            <div class="card-header py-3">
+                                <h4 class="my-0 fw-normal">Administrador <br> de Edificios</h4>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title">$15.000</h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Creacion y Administracion de Departamentos</li>
+                                    <li>Espacios limitados al tamaño de su edificio</li>
+                                    <li>Soporte Completo Remoto</li>
+                                    <li>Centro de ayuda gratuito</li>
+                                </ul>
+                                <a type="button" class="w-100 btn btn-lg btn-outline-primary" th:href="@{/login}">Empezar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card mb-4 rounded-3 shadow-sm">
+                            <div class="card-header py-3">
+                                <h4 class="my-0 fw-normal">Administrador <br> de Corredoras</h4>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title">$25.000</h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Creacion y Administracion de Trabajadores</li>
+                                    <li>Creacion y Administracion de Edificios</li>
+                                    <li>Creacion y Administracion de Contratos</li>
+                                    <li>Centro de Ayuda Completo Remoto</li>
+                                </ul>
+                                <a type="button" class="w-100 btn btn-lg btn-outline-primary" th:href="@{/login}">Empezar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card mb-4 rounded-3 shadow-sm">
+                            <div class="card-header py-3">
+                                <h4 class="my-0 fw-normal">Administrador <br> de Trabajadores</h4>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title">$25.000</h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Creacion y Administracion de Trabajadores</li>
+                                    <li>Creacion y Administracion de Liquidaciones</li>
+                                    <li>Creacion y Administracion de Contratos</li>
+                                    <li>Centro de Ayuda Completo Remoto</li>
+                                </ul>
+                                <a type="button" class="w-100 btn btn-lg btn-outline-primary" th:href="@{/login}">Empezar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card mb-4 rounded-3 shadow-sm">
+                            <div class="card-header py-3">
+                                <h4 class="my-0 fw-normal">Administrador <br> de Edificios</h4>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title">$15.000</h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Creacion y Administracion de Departamentos</li>
+                                    <li>Espacios limitados al tamaño de su edificio</li>
+                                    <li>Soporte Completo Remoto</li>
+                                    <li>Centro de ayuda gratuito</li>
+                                </ul>
+                                <a type="button" class="w-100 btn btn-lg btn-outline-primary" th:href="@{/login}">Empezar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card mb-4 rounded-3 shadow-sm">
+                            <div class="card-header py-3">
+                                <h4 class="my-0 fw-normal">Administrador <br> de Corredoras</h4>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title">$25.000</h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Creacion y Administracion de Trabajadores</li>
+                                    <li>Creacion y Administracion de Edificios</li>
+                                    <li>Creacion y Administracion de Contratos</li>
+                                    <li>Centro de Ayuda Completo Remoto</li>
+                                </ul>
+                                <a type="button" class="w-100 btn btn-lg btn-outline-primary" th:href="@{/login}">Empezar</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Administrador <br> de Edificios</h4>
-                    </div>
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title">$15.000</h1>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>Creacion y Administracion de Departamentos</li>
-                            <li>Espacios limitados al tamaño de su edificio</li>
-                            <li>Soporte Completo Remoto</li>
-                            <li>Centro de ayuda gratuito</li>
-                        </ul>
-                        <button type="button" class="w-100 btn btn-lg btn-outline-primary">Empezar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
+        </section>
         <!-- tarjetas -->
+        <!-- Sobre Nosotros -->
+        <br>
+        <section id="sobre-nosotros">
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                <h1 class="display-4 fw-normal">Sobre Nosotros</h1>
+                <br>
+                <p class="fs-5 text-muted">Somos Una Plataforma de PinoLabs Creada Para Facilitar La Vida De Nuestros Clientes.<br>
+                Contramos Con Diversos Sistemas Para Una Correcta Administracion Y Cuidado De Datos Relacionados A Tu Edificio.<br>
+                Miles De Clientes Nos Avalan, Somos Una Plataforma Sencilla,Rapida,Segura y Eficaz.<br>
+                Que Esperas Para Formar Parte.</p>
+            </div>
+        </section>
+        <!-- Sobre Nosotros -->
+
     </main>
 
     <footer class="pt-4 my-md-5 pt-md-5 border-top">
         <div class="row">
             <div class="col-12 col-md">
-                <img class="mb-2" th:src="@{/img/logo.png}" alt="" width="50" height="50">
-                <small class="d-block mb-3 text-muted">Creado por PinoLabs&copy; 2022</small>
+                <div class="centro">
+                    <img class="mb-2" th:src="@{/img/logo.png}" alt="" width="50" height="50">
+                    <small class="d-block mb-3 text-muted">Creado por PinoLabs&copy; 2022</small>
+                </div>
             </div>
-            <div class="col-6 col-md">
-            </div>
-            <div class="col-6 col-md">
-            </div>
-            <div class="col-6 col-md">
+
+            <div class="col-12 col-md">
+                <div class="centro">
                 <h5>Acerca De</h5>
                 <ul class="list-unstyled text-small">
                     <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Trabaja Con Nosotros</a></li>
                     <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Terminos y Privacidad</a></li>
                     <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Contactanos</a></li>
                 </ul>
+                </div>
             </div>
         </div>
     </footer>

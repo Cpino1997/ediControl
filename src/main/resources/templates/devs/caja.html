@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>ADMINISTRADOR AFP</title>
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/css/style.css}" rel="stylesheet">
+  <script th:src="@{/js/jquery-3.6.0.min.js}"></script>
+  <script th:src="@{/js/bootstrap.min.js}"></script>
+  <script src="https://kit.fontawesome.com/b6cd2b590e.js" crossorigin="anonymous"></script>
+  <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+</head>
+<body>
+<header>
+  <h1><center>Bienvenido Desarrollador</center></h1>
+</header>
+<main>
+  <h3 class="span loader centro">
+    <span class="m">L</span>
+    <span class="m">I</span>
+    <span class="m">S</span>
+    <span class="m">T</span>
+    <span class="m">A</span>
+    <span class="m">D</span>
+    <span class="m">O</span>
+    <span class="m">&nbsp;</span>
+    <span class="m">D</span>
+    <span class="m">E</span>
+    <span class="m">&nbsp;</span>
+    <span class="m">C</span>
+    <span class="m">A</span>
+    <span class="m">J</span>
+    <span class="m">A</span>
+    <span class="m">S</span>
+  </h3>
+  <!-- SPAN lETRAS-->
+
+  <!-- Contenedor -->
+  <div class="mask d-flex align-items-center h-100">
+    <div class="container">
+      <div class="row justify-content-center">
+        <br>
+        <!-- TABLA -->
+        <section class="container w80">
+          <br>
+          <table class="table table-stripe" >
+            <table class="table table-hover" id="cajas">
+              <thead>
+              <tr class="centro">
+                <th>Nombre</th>
+                <th>Descuento</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr  class="centro" th:each="caja: ${cajas}">
+                <th th:text="${caja.getNombre()}"></th>
+                <td><a th:text="${caja.getDescuento()}"></a>%</td>
+              </tr>
+              </tbody>
+            </table>
+          </table>
+          <!-- TABLA CLIENTES-->
+
+
+          <br>
+          <!-- BOTONES -->
+          <div class="row">
+            <div class="col">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cearCaja">Crear Caja</button>
+            </div>
+            <div class="col-auto">
+              <a th:href="@{/devs}" class="btn btn-primary">volver</a>
+            </div>
+          </div>
+          <!-- BOTONES -->
+        </section>
+
+        <!-- TABLA -->
+      </div>
+    </div>
+  </div>
+  <!-- Contenedor -->
+
+  <!-- Modal Crear Producto-->
+  <div class="modal fade" id="cearCaja" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form th:action="@{/devs/caja/save}" method="post" th:object="${caja}">
+            <h3 class="span loader centro">
+              <span class="m">A</span>
+              <span class="m">G</span>
+              <span class="m">R</span>
+              <span class="m">E</span>
+              <span class="m">G</span>
+              <span class="m">A</span>
+              <span class="m">R</span>
+              <span class="m">&nbsp;</span>
+              <span class="m">C</span>
+              <span class="m">A</span>
+              <span class="m">J</span>
+              <span class="m">A</span>
+              <span class="m">S</span>
+            </h3>
+            <div class="mb-3">
+              <input type="hidden" class="form-control" id="idCaja" name="idCaja">
+            </div>
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Jabon">
+            </div>
+            <div class="mb-3">
+              <label for="descuento" class="form-label">precio</label>
+              <input type="number" class="form-control" id="descuento" name="descuento" placeholder="7%">
+            </div>
+            <div class="row top1">
+              <div class="col-md centro">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="reset" class="btn btn-secondary">Limpiar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Crear Producto-->
+</main>
+<!-- Scrípts -->
+<script th:inline="javascript">
+$(document).ready( function () {
+$('#cajas').DataTable();
+} );
+</script></main>
+</body>
+</html>
