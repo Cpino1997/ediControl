@@ -9,11 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class indexController {
 
     @GetMapping
-    public String index() {
-        return "index";
+    public String app() {
+        return "app";
     }
 
     @GetMapping("/home")
     public String home(){return"home";}
+
+    @GetMapping("/index")
+    public String index() {
+        return "index";
+    }
 
 }
