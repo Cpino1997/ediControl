@@ -32,11 +32,11 @@ public class ContratoRestController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @PostMapping("/save")
+    @PostMapping
     public ResponseEntity<ContratoDTO> save(@RequestBody ContratoDTO contratoDTO){
         return new ResponseEntity<>(service.save(contratoDTO), HttpStatus.OK);
     }
-    @DeleteMapping("/del/{idContrato}")
+    @DeleteMapping("/{idContrato}")
     public ResponseEntity delete(@PathVariable("idContrato") int idContrato){
         if (service.delete(idContrato)){
             return new ResponseEntity<>(HttpStatus.OK);

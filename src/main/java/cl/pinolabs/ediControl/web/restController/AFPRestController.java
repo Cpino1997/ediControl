@@ -35,7 +35,7 @@ public ResponseEntity<AFPDTO> findById(@PathVariable("idAfp") int idAfp){
 public ResponseEntity<AFPDTO> save(@RequestBody AFPDTO afpdto){
     return new ResponseEntity<>(service.save(afpdto), HttpStatus.OK);
 }
-@DeleteMapping("/del/{idAfp}")
+@DeleteMapping("/{idAfp}")
 public ResponseEntity delete(@PathVariable("idAfp") int idAfp){
     if (service.delete(idAfp)){
         return new ResponseEntity<>(HttpStatus.OK);

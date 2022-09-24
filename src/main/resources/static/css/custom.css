@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.centro{
+    text-align: center;
+}
+body{
+    background-image: url("/img/fondo.jpg");
+    background-size: cover;
+}
+.b1{
+    background-image: url("/img/pro1.jpg");
+}
+.imgP{
+    border-style: solid;
+    border-radius: 10px;
+    font-family: 'calibri';
+    box-shadow: 7px 7px 17px #000;
+}
+.text{
+  color: black;
+  text-shadow: 0.5px 0.5px black;
+}
+
+//secciones
+#inicio{
+    display: block;
+}
+#sobre-mi{
+    display: none;
+}
+#proyectos{
+    display: none;
+}
+#contacto{
+    display: none;
+}
+.card-header{
+    background:none;
+}
