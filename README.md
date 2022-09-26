@@ -1,4 +1,4 @@
-<img src="https://i.ibb.co/gmGz0Qd/success.png">
+# <img src="https://i.ibb.co/gmGz0Qd/success.png">
 # EdiControl
 
 Somos una plataforma de administracion de Edificios
