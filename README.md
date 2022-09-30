@@ -71,15 +71,23 @@ Su fronted se esta creando con una convinacion entre Thymeleft y JS Puro.
 
 Instrucciones de uso para la aplicacion web:
 Para ingresar desde la web solo basta con arrancar la aplicacion e ingresar a http://localhost:8080/
+
 para ingresar al admin solo debemos ir a http://localhost:8080/devs
+
 para ingresar al crud de asistencias debemos ir a http://localhost:8080/devs/asistencia
+
 para ingresar al crud de afp debemos ir a http://localhost:8080/devs/afp
+
 para ingresar al crud de salud debemos ir a http://localhost:8080/devs/salud
+
 para ingresar al crud de caja debemos ir a http://localhost:8080/devs/caja
+
 para ingresar al crud de contratos debemos ir a http://localhost:8080/devs/contratos
+
 para ingresar al crud de horarios debemos ir a http://localhost:8080/devs/horarios
+
 para ingresar al crud de trabajadores debemos ir a http://localhost:8080/devs/trabajadores
 
 
 # Importante
-La aplicación aún se encuentra en construcción por lo cual faltan bastantes cosas.
+La aplicación aún se encuentra en construcción por lo cual faltan bastantes cosas y puede presentar fallos.
