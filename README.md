@@ -39,13 +39,29 @@ Para utilizar nuestra api tenemos disponibles los siguientes endpoints:
   get -> Devuelve un JSON con el objeto correspondiente al id solicitado. Requiere el idTrabajador, autenthication basic en su header y no-cors para la version en linea.
   delete -> Elimina el Objeto de la BD. Requiere de autenthication basic en su header y no-cors para la version en linea.
 
-#Uso op = afps,cajas,saluds si desea ver afps debe reemplazar op por afps.
-/api/op
+#Uso afps
+/api/afps
    get -> devuelve un JSON con todos los objetos existentes en la BD.
-   post -> Recive un JSON con un objeto Producto, se espera un idOp, descuento y nombre. Requiere de autenthication basic en su header y no-cors para la version en linea
-/api/op{idOp}
-  get -> Devuelve un JSON con el objeto correspondiente al id solicitado. Requiere el idOp, autenthication basic en su header y no-cors para la version en linea.
-  delete -> Elimina el Objeto de la BD.  Requiere el idOp, autenthication basic en su header y no-cors para la version en linea.
+   post -> Recive un JSON con un objeto Producto, se espera un idAfp, descuento y nombre. Requiere de autenthication basic en su header y no-cors para la version en linea
+/api/afps{idAfp}
+  get -> Devuelve un JSON con el objeto correspondiente al id solicitado. Requiere el idAfp, autenthication basic en su header y no-cors para la version en linea.
+  delete -> Elimina el Objeto de la BD.  Requiere el idAfp, autenthication basic en su header y no-cors para la version en linea.
+
+#Uso cajas
+/api/cajas
+   get -> devuelve un JSON con todos los objetos existentes en la BD.
+   post -> Recive un JSON con un objeto Producto, se espera un idCaja, descuento y nombre. Requiere de autenthication basic en su header y no-cors para la version en linea
+/api/cajas{idCaja}
+  get -> Devuelve un JSON con el objeto correspondiente al id solicitado. Requiere el idCaja, autenthication basic en su header y no-cors para la version en linea.
+  delete -> Elimina el Objeto de la BD.  Requiere el idCaja, autenthication basic en su header y no-cors para la version en linea.
+
+#Uso saluds
+/api/saluds
+   get -> devuelve un JSON con todos los objetos existentes en la BD.
+   post -> Recive un JSON con un objeto Producto, se espera un idSalud, descuento y nombre. Requiere de autenthication basic en su header y no-cors para la version en linea
+/api/saluds{idSalud}
+  get -> Devuelve un JSON con el objeto correspondiente al id solicitado. Requiere el idSalud, autenthication basic en su header y no-cors para la version en linea.
+  delete -> Elimina el Objeto de la BD.  Requiere el idSalud, autenthication basic en su header y no-cors para la version en linea.
 
 #Uso horarios
 /api/horarios
