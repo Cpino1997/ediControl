@@ -90,4 +90,4 @@ para ingresar al crud de trabajadores debemos ir a http://localhost:8080/devs/tr
 
 
 # Importante
-La aplicación aún se encuentra en construcción por lo cual faltan bastantes cosas y puede presentar fallos.
+Esta app no es el codigo original por lo cual puede estar incompleta o faltarle detalles. Se actualizara para integrar nuevas funciones
